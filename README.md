@@ -179,3 +179,19 @@ public (active)
   rich rules:
 
 ```
+---
+## Netcat
+
+J'ai fait le netcat entre mon PowerShell et ma VM :
+![vm](images/netcat_vm.png)
+
+Puis les résultats du 3ème terminal pendant le netcat sont (données importante pas en commentaire):
+```bash
+[root@localhost ~]# ss -natp4
+State      Recv-Q Send-Q Local Address:Port               Peer Address:Port     
+#LISTEN     0      128          *:2222                     *:*     #              users:(("sshd",pid=3850,fd=3))
+#LISTEN     0      100    127.0.0.1:25                       *:*   #                users:(("master",pid=3487,fd=13))
+#ESTAB      0      64     192.168.127.10:2222               192.168.127.1:1567                users:(("sshd",pid=4203,fd=3))
+#ESTAB      0      0      192.168.127.10:2222               192.168.127.1:1083                users:(("sshd",pid=4226,fd=3))
+ESTAB      0      0      192.168.127.10:5454               192.168.127.1:1130                users:(("nc",pid=4245,fd=5))
+```
