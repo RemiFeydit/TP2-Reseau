@@ -1,4 +1,36 @@
-# TP2 Reseau
+# TP3 Reseau
+
+# Sommaire
+
+* [I. Création et utilisation simples d'une VM CentOS](#-I.-Création-et-utilisation-simples-d'une-VM-CentOS)
+    * [Ping hôte à la VM](##-Ping-hôte-à-la-VM)
+    * [Ping de la VM à l'hôte](##-Ping-de-la-VM-à-l'hôte)
+    * [Table de routage de l'hôte](##-Table-de-routage-de-la-VM)
+    * [Lignes qui permettent de discuter via host-only](##-Lignes-qui-permettent-de-discuter-via-host-only)
+    * [Utilisation de curl](##-Utilisation-de-curl)
+    * [Utilisation de dig ynov.com](##-Utilisation-de-dig-ynov.com)
+    * [Utilisation de dig google.com](##-Utilisation-de-dig-google.com)
+* [II. Notion de ports et SSH](#-Notion-de-ports-et-SSH)
+    * [Utilisation de la commande "ss -4"](##-Utilisation-de-la-commande-"ss--4")
+    * [Utilisation de la commande "ss -t"](##-Utilisation-de-la-commande-"ss--t")
+    * [Utilisation de la commande "ss -l"](##-Utilisation-de-la-commande-"ss--l")
+* [III. SSH](#SSH)
+* [IV. FireWall](#FireWall)
+* [V. Netcat](#Netcat)
+* [VI. Routage statique (Partie à 2 tp3)](#Routage-statique-(Partie-à-2-tp3))
+    * [1. Préparation des hôtes (vos PCs)](####-1.-Préparation-des-hôtes-(vos-PCs))
+        * [Ping à travers le câble Ethernet](####-Ping-à-travers-le-câble-Ethernet)
+        * [Préparation Virtual Box](####Préparation-Virtual-Box)
+        * [Check](####-Check)
+    * [2. Configuration du routage](###2.-Configuration-du-routage)
+    * [3. Netcat VM 1 -> VM 2](###3.-Netcat-VM-1-->-VM-2)
+
+
+
+
+
+
+# I. Création et utilisation simples d'une VM CentOS
 
 ## Ping hôte à la VM
 ```bash
@@ -80,7 +112,7 @@ default via 10.0.2.2 dev enp0s3 proto dhcp metric 100
 
 ```
 ---
-## Ligne qui permet de discuter via host-only
+## Lignes qui permettent de discuter via host-only
 
 Sur l'host:
 
@@ -123,7 +155,7 @@ Netid  State      Recv-Q Send-Q Local Address:Port                 Peer Address:
 tcp    ESTAB      0      0      192.168.127.10:ssh                  192.168.127.1:32487
 ```
 ---
-## Utilisation commande "ss -t"
+## Utilisation de la commande "ss -t"
 
 ```bash
 [root@localhost ~]# ss -t
@@ -196,15 +228,11 @@ State      Recv-Q Send-Q Local Address:Port               Peer Address:Port
 ESTAB      0      0      192.168.127.10:5454               192.168.127.1:1130                users:(("nc",pid=4245,fd=5))
 ```
 ---
-# Routage statique
-
-# Partie à 2 tp 3
-
-## III. Routage statique
+# III. Routage statique (Partie à 2 tp3)
 
 ### 1. Préparation des hôtes (vos PCs)
 ---
-#### Ping à travers le cable ethernet
+#### Ping à travers le câble Ethernet
 
 ```bash
 PS C:\Users\Notitou> ping 192.168.255.1
@@ -228,7 +256,7 @@ Changement d'ip sur les cartes ethernet pour être dans le réseau 192.168.112.0
 #### Préparation Virtual Box
 
 Rémi et Louis ont changé leurs IP de leur carte Host-Only et de leur VM par celle recquise.
-
+---
 #### Check
 ---
 Ping PC 1 -> PC 2
@@ -537,7 +565,7 @@ PING vm1 (192.168.101.10) 56(84) bytes of data.
 rtt min/avg/max/mdev = 2.261/2.530/2.820/0.207 ms
 ```
 ---
-#### Netcat VM 1 -> VM 2
+### 3. Netcat VM 1 -> VM 2
 
 ```bash
 [louis@localhost /]$ nc vm1.tp3.b1 5454
