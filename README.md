@@ -2,12 +2,12 @@
 
 # Sommaire
 
-* [I. Création et utilisation simples d'une VM CentOS](#I.-Création-et-utilisation-simples-d'une-VM-CentOS)
-* [II. Notion de ports et SSH](#II.-Notion-de-ports-et-SSH)
-* [III. SSH](#III.-SSH)
-* [IV. FireWall](#IV.-FireWall)
-* [V. Netcat](#V.-Netcat)
-* [VI. Routage statique (Partie à 2 tp3)](#VI.-Routage-statique-(Partie-à-2-tp3))
+* [I. Création et utilisation simples d'une VM CentOS](#i.-création-et-utilisation-simples-d'une-vm-centos)
+* [II. Notion de ports et SSH](#ii.-notion-de-ports-et-ssh)
+* [III. SSH](#iii.-ssh)
+* [IV. FireWall](#iv.-firewall)
+* [V. Netcat](#v.-netcat)
+* [VI. Routage statique (Partie à 2 tp3)](#vi.-routage-statique-(partie-à-2-tp3))
 
 # I. Création et utilisation simples d'une VM CentOS
 
