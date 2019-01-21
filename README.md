@@ -3,27 +3,27 @@
 # Sommaire
 
 * [I. Création et utilisation simples d'une VM CentOS](#I.-Création-et-utilisation-simples-d'une-VM-CentOS)
-    * [Ping hôte à la VM](##Ping-hôte-à-la-VM)
-    * [Ping de la VM à l'hôte](##Ping-de-la-VM-à-l'hôte)
-    * [Table de routage de l'hôte](##Table-de-routage-de-la-VM)
+    * [Ping hôte à la VM](#Ping-hôte-à-la-VM)
+    * [Ping de la VM à l'hôte](#Ping-de-la-VM-à-l'hôte)
+    * [Table de routage de l'hôte](#Table-de-routage-de-la-VM)
     * [Lignes qui permettent de discuter via host-only](##Lignes-qui-permettent-de-discuter-via-host-only)
-    * [Utilisation de curl](##Utilisation-de-curl)
-    * [Utilisation de dig ynov.com](##Utilisation-de-dig-ynov.com)
-    * [Utilisation de dig google.com](##Utilisation-de-dig-google.com)
-* [II. Notion de ports et SSH](#Notion-de-ports-et-SSH)
-    * [Utilisation de la commande "ss -4"](##Utilisation-de-la-commande-"ss--4")
-    * [Utilisation de la commande "ss -t"](##Utilisation-de-la-commande-"ss--t")
-    * [Utilisation de la commande "ss -l"](##Utilisation-de-la-commande-"ss--l")
-* [III. SSH](#SSH)
-* [IV. FireWall](#FireWall)
-* [V. Netcat](#Netcat)
-* [VI. Routage statique (Partie à 2 tp3)](#Routage-statique-(Partie-à-2-tp3))
-    * [1. Préparation des hôtes (vos PCs)](####1.-Préparation-des-hôtes-(vos-PCs))
-        * [Ping à travers le câble Ethernet](####Ping-à-travers-le-câble-Ethernet)
-        * [Préparation Virtual Box](####Préparation-Virtual-Box)
-        * [Check](####Check)
-    * [2. Configuration du routage](###2.-Configuration-du-routage)
-    * [3. Netcat VM 1 -> VM 2](###3.-Netcat-VM-1-->-VM-2)
+    * [Utilisation de curl](#Utilisation-de-curl)
+    * [Utilisation de dig ynov.com](#Utilisation-de-dig-ynov.com)
+    * [Utilisation de dig google.com](#Utilisation-de-dig-google.com)
+* [II. Notion de ports et SSH](#II.-Notion-de-ports-et-SSH)
+    * [Utilisation de la commande "ss -4"](#Utilisation-de-la-commande-"ss--4")
+    * [Utilisation de la commande "ss -t"](#Utilisation-de-la-commande-"ss--t")
+    * [Utilisation de la commande "ss -l"](#Utilisation-de-la-commande-"ss--l")
+* [III. SSH](#III.-SSH)
+* [IV. FireWall](#IV.-FireWall)
+* [V. Netcat](#V.-Netcat)
+* [VI. Routage statique (Partie à 2 tp3)](#VI.-Routage-statique-(Partie-à-2-tp3))
+    * [1. Préparation des hôtes (vos PCs)](#1.-Préparation-des-hôtes-(vos-PCs))
+        * [Ping à travers le câble Ethernet](#Ping-à-travers-le-câble-Ethernet)
+        * [Préparation Virtual Box](#Préparation-Virtual-Box)
+        * [Check](#Check)
+    * [2. Configuration du routage](#2.-Configuration-du-routage)
+    * [3. Netcat VM 1 -> VM 2](#3.-Netcat-VM-1-->-VM-2)
 
 
 
@@ -32,7 +32,7 @@
 
 # I. Création et utilisation simples d'une VM CentOS
 
-## Ping hôte à la VM
+# Ping hôte à la VM
 ```bash
 PS C:\Users\Notitou> ping 192.168.127.10
 
@@ -48,7 +48,7 @@ Durée approximative des boucles en millisecondes :
     Minimum = 0ms, Maximum = 0ms, Moyenne = 0ms
 ```
 ---
-## Ping de la VM à l'hôte
+# Ping de la VM à l'hôte
 
 ```bash
 [root@localhost ~]# ping 192.168.127.1
@@ -63,7 +63,7 @@ rtt min/avg/max/mdev = 0.215/0.359/0.452/0.088 ms
 
 ```
 ---
-## Table de routage de l'hôte
+# Table de routage de l'hôte
 ```bash
 PS C:\Users\Notitou> route print -4
 ===========================================================================
@@ -102,7 +102,7 @@ Itinéraires persistants :
   Aucun
 ```
 ---
-## Table de routage de la VM
+# Table de routage de la VM
 ```bash
 [root@localhost ~]# ip route
 default via 10.0.2.2 dev enp0s3 proto dhcp metric 100
@@ -112,7 +112,7 @@ default via 10.0.2.2 dev enp0s3 proto dhcp metric 100
 
 ```
 ---
-## Lignes qui permettent de discuter via host-only
+# Lignes qui permettent de discuter via host-only
 
 Sur l'host:
 
@@ -125,7 +125,7 @@ Sur la VM :
 192.168.127.0/24 dev enp0s8 proto kernel scope link src 192.168.127.10
 ```
 ---
-## Utilisation de curl
+# Utilisation de curl
 ```bash
 [root@localhost ~]# curl google.com
 <HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -136,26 +136,26 @@ The document has moved
 </BODY></HTML>
 ```
 ---
-## Utilisation de dig ynov.com
+# Utilisation de dig ynov.com
 ```bash
 ;; SERVER: 10.33.10.20#53(10.33.10.20)
 ```
 ---
-## Utilisation de dig google.com
+# Utilisation de dig google.com
 ```bash
 ;; SERVER: 10.33.10.20#53(10.33.10.20)
 ```
 ---
-# Notion de ports et SSH
+# II. Notion de ports et SSH
 
-## Utilisation de la commande "ss -4"
+# Utilisation de la commande "ss -4"
 ```bash
 [root@localhost ~]# ss -4
 Netid  State      Recv-Q Send-Q Local Address:Port                 Peer Address:Port
 tcp    ESTAB      0      0      192.168.127.10:ssh                  192.168.127.1:32487
 ```
 ---
-## Utilisation de la commande "ss -t"
+# Utilisation de la commande "ss -t"
 
 ```bash
 [root@localhost ~]# ss -t
@@ -163,18 +163,18 @@ State      Recv-Q Send-Q Local Address:Port                 Peer Address:Port
 ESTAB      0      64     192.168.127.10:ssh                  192.168.127.1:tcoaddressbook
 ```
 ---
-## Utilisation de la commande "ss -l"
+# Utilisation de la commande "ss -l"
 ```bash
 tcp    LISTEN     0      128     *:ssh                   *:*
 tcp    LISTEN     0      128    :::ssh                  :::*
 ```
 ---
-# SSH
+# III. SSH
 
 ![putty](images/putty.png)
 
 ---
-# FireWall
+# IV. FireWall
 
 Nous avons modifié le fichier `sshd_config` pour changer le port, et l'avons mis au port 2222.
 Puis avant exécuter la commande `ss -naltp4` pour bien vérifié que le port a bien été modifié.
@@ -212,7 +212,7 @@ public (active)
 
 ```
 ---
-## Netcat
+# V. Netcat
 
 J'ai fait le netcat entre mon PowerShell et ma VM :
 ![vm](images/netcat_vm.png)
@@ -228,9 +228,9 @@ State      Recv-Q Send-Q Local Address:Port               Peer Address:Port
 ESTAB      0      0      192.168.127.10:5454               192.168.127.1:1130                users:(("nc",pid=4245,fd=5))
 ```
 ---
-# III. Routage statique (Partie à 2 tp3)
+# VI. Routage statique (Partie à 2 tp3)
 
-### 1. Préparation des hôtes (vos PCs)
+# 1. Préparation des hôtes (vos PCs)
 ---
 #### Ping à travers le câble Ethernet
 
@@ -253,11 +253,11 @@ Changement d'ip sur les cartes ethernet pour être dans le réseau 192.168.112.0
 
 ---
 
-#### Préparation Virtual Box
+# Préparation Virtual Box
 
 Rémi et Louis ont changé leurs IP de leur carte Host-Only et de leur VM par celle recquise.
 ---
-#### Check
+# Check
 ---
 Ping PC 1 -> PC 2
 ```powershell
@@ -376,7 +376,7 @@ Durée approximative des boucles en millisecondes :
 ```
 ----
 
-### 2. Configuration du routage
+# 2. Configuration du routage
 
 - PC 1
 
@@ -565,7 +565,7 @@ PING vm1 (192.168.101.10) 56(84) bytes of data.
 rtt min/avg/max/mdev = 2.261/2.530/2.820/0.207 ms
 ```
 ---
-### 3. Netcat VM 1 -> VM 2
+# 3. Netcat VM 1 -> VM 2
 
 ```bash
 [louis@localhost /]$ nc vm1.tp3.b1 5454
