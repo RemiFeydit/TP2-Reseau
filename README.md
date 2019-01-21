@@ -2,12 +2,42 @@
 
 # Sommaire
 
+<<<<<<< HEAD
 * [I. Création et utilisation simples d'une VM CentOS](#i.-création-et-utilisation-simples-d'une-vm-centos)
 * [II. Notion de ports et SSH](#ii.-notion-de-ports-et-ssh)
 * [III. SSH](#iii.-ssh)
 * [IV. FireWall](#iv.-firewall)
 * [V. Netcat](#v.-netcat)
 * [VI. Routage statique (Partie à 2 tp3)](#vi.-routage-statique-(partie-à-2-tp3))
+=======
+* [I. Création et utilisation simples d'une VM CentOS](#-I.-Création-et-utilisation-simples-d'une-VM-CentOS)
+    * [Ping hôte à la VM](##-Ping-hôte-à-la-VM)
+    * [Ping de la VM à l'hôte](##-Ping-de-la-VM-à-l'hôte)
+    * [Table de routage de l'hôte](##-Table-de-routage-de-la-VM)
+    * [Lignes qui permettent de discuter via host-only](##-Lignes-qui-permettent-de-discuter-via-host-only)
+    * [Utilisation de curl](##-Utilisation-de-curl)
+    * [Utilisation de dig ynov.com](##-Utilisation-de-dig-ynov.com)
+    * [Utilisation de dig google.com](##-Utilisation-de-dig-google.com)
+* [II. Notion de ports et SSH](#-Notion-de-ports-et-SSH)
+    * [Utilisation de la commande "ss -4"](##-Utilisation-de-la-commande-"ss--4")
+    * [Utilisation de la commande "ss -t"](##-Utilisation-de-la-commande-"ss--t")
+    * [Utilisation de la commande "ss -l"](##-Utilisation-de-la-commande-"ss--l")
+* [III. SSH](#SSH)
+* [IV. FireWall](#FireWall)
+* [V. Netcat](#Netcat)
+* [VI. Routage statique (Partie à 2 tp3)](#Routage-statique-(Partie-à-2-tp3))
+    * [1. Préparation des hôtes (vos PCs)](####-1.-Préparation-des-hôtes-(vos-PCs))
+        * [Ping à travers le câble Ethernet](####-Ping-à-travers-le-câble-Ethernet)
+        * [Préparation Virtual Box](####Préparation-Virtual-Box)
+        * [Check](####-Check)
+    * [2. Configuration du routage](###2.-Configuration-du-routage)
+    * [3. Netcat VM 1 -> VM 2](###3.-Netcat-VM-1-->-VM-2)
+
+
+
+
+
+>>>>>>> parent of 49aa4a3... Correction Sommaire ?
 
 # I. Création et utilisation simples d'une VM CentOS
 
